@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--padding-->
+    <dimen name="padding_15dp">15dp</dimen>
+    <!--textsize-->
+    <dimen name="textsize_15sp">15sp</dimen>
+</resources>

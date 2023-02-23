@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btn_simple_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_15dp"
+        android:text="@string/simple_notification_title"
+        android:textAllCaps="false"
+        android:textSize="@dimen/textsize_15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bigtextstyle_notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_bigtextstyle_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_15dp"
+        android:text="@string/bigtext_notification_style_title"
+        android:textAllCaps="false"
+        android:textSize="@dimen/textsize_15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_bigpicturestyle_notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_simple_notification" />
+
+    <Button
+        android:id="@+id/btn_bigpicturestyle_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_15dp"
+        android:text="@string/bigPicture_notification_style_title"
+        android:textAllCaps="false"
+        android:textSize="@dimen/textsize_15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_inboxstyle_notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bigtextstyle_notification" />
+
+    <Button
+        android:id="@+id/btn_inboxstyle_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_15dp"
+        android:text="@string/inbox_notification_style_title"
+        android:textAllCaps="false"
+        android:textSize="@dimen/textsize_15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_action_notification"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_bigpicturestyle_notification" />
+
+    <Button
+        android:id="@+id/btn_action_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_15dp"
+        android:text="@string/action_notification_title"
+        android:textAllCaps="false"
+        android:textSize="@dimen/textsize_15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_foreground_service"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_inboxstyle_notification" />
+
+
+    <Button
+        android:id="@+id/btn_foreground_service"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_15dp"
+        android:text="@string/simple_foreground_title"
+        android:textAllCaps="false"
+        android:textSize="@dimen/textsize_15sp"
+        app:layout_constraintBottom_toTopOf="@+id/btn_foreground_service_stop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_action_notification" />
+
+    <Button
+        android:id="@+id/btn_foreground_service_stop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding_15dp"
+        android:text="@string/simple_foreground_stop"
+        android:textAllCaps="false"
+        android:textSize="@dimen/textsize_15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btn_foreground_service" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">NotificationTest</string>
+    <string name="simple_foreground_title">Foreground Notification</string>
+    <string name="simple_foreground_stop">Foreground Notification Stop</string>
+    <string name="simple_notification_title">Simple Notification</string>
+    <string name="simple_notification_text">This is a simple notification</string>
+    <string name="bigtext_notification_title">BigText Notification</string>
+    <string name="bigtext_notification_text">This is a BigTextStyle Notification</string>
+    <string name="bigPicture_notification_title">BigPicture Notification</string>
+    <string name="bigPicture_notification_text">This is a BigPictureStyle Notification</string>
+    <string name="inbox_notification_title">Inbox Notification</string>
+    <string name="inbox_notification_text">This is an InboxStyle Notification</string>
+    <string name="action_notification_title">Action Notification</string>
+    <string name="action_notification_text">This is an Action Notification</string>
+
+    <string name="bigtext_notification_style_title">BigTextStyle Notification</string>
+    <string name="bigPicture_notification_style_title">BigPictureStyle Notification</string>
+    <string name="inbox_notification_style_title">InboxStyle Notification</string>
+</resources>
