@@ -305,7 +305,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     .setUsage(AudioAttributes.USAGE_NOTIFICATION)
                     .build();
             channel.setSound(ringtoneUri, audioAttributes);
-            channel.enableVibration(false);
+            long[] pattern = {1000,800};
+            channel.setVibrationPattern(pattern);
 
             // Register the channel with the system; you can't change the importance
             // or other notification behaviors after this

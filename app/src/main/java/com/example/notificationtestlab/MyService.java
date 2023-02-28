@@ -58,9 +58,9 @@ public class MyService extends Service {
             Log.d("NotificationTest", "handleMessage ");
             try {
                 Thread.sleep(5000);
-//                createActionNotification();
                 startForeground();
 //                createActionNotificationCallType();
+//                createActionNotification();
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
@@ -73,24 +73,27 @@ public class MyService extends Service {
     private void startForeground() {
         Intent intent = new Intent(MyService.this, MainActivity.class);
         PendingIntent pendingIntent = PendingIntent.getActivity(MyService.this, 0, intent, PendingIntent.FLAG_IMMUTABLE | PendingIntent.FLAG_UPDATE_CURRENT);
-        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.nature_img);
+        Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.progile);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             builder = new NotificationCompat.Builder(getApplicationContext(), MainActivity.CHANNEL_ID)
-                    .setOngoing(true)
+//                    .setOngoing(true)
                     .setCategory(NotificationCompat.CATEGORY_CALL)
                     .setContentTitle("Content Title")
                     .setContentText("ContestText 입니다")
-                    .setDeleteIntent(pendingIntent)
+                    .setSmallIcon(R.drawable.progile)
+                    .setLargeIcon(largeIcon)
+                    .setStyle(new NotificationCompat.BigTextStyle()
+                            .bigText("Much longer text that cannot fit one line..."))
+//                    .setContentIntent(pendingIntent)
+//                    .setDeleteIntent(pendingIntent)
+//                    .setFullScreenIntent(requestPermissionPendingIntent, true)
                     .setTimeoutAfter(60 * 1000)
+                    .setAutoCancel(false)
                     .setOnlyAlertOnce(true)
                     .setPriority(NotificationCompat.PRIORITY_HIGH)
-                    .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-                    .setSmallIcon(R.drawable.nature_img)
-                    .setLargeIcon(largeIcon)
-//                    .setFullScreenIntent(requestPermissionPendingIntent, true)
-                    .setContentIntent(pendingIntent);
+                    .setVisibility(NotificationCompat.VISIBILITY_PUBLIC);
             Notification notification = builder.build();
-            notification.flags = Notification.FLAG_INSISTENT;
+            notification.flags |= Notification.FLAG_INSISTENT;
             startForeground(1, notification);
         }
     }
@@ -181,29 +184,31 @@ public class MyService extends Service {
                 new NotificationCompat.Action.Builder(0,
                         "Delete", pendingIntent)
                         .build();
-
+        long[] pattern = {1000,800};
         Bitmap largeIcon = BitmapFactory.decodeResource(getResources(), R.drawable.nature_img);
         Notification notification = new NotificationCompat.Builder(this, MainActivity.CHANNEL_ID)
-                .setOngoing(true)
+//                .setOngoing(true)
                 .setCategory(NotificationCompat.CATEGORY_CALL)
                 .setContentTitle("Content Title")
-//                .setContentIntent(pendingIntent)
                 .setContentText("ContestText 입니다")
-                .setDefaults(NotificationCompat.DEFAULT_SOUND)
-                .setDeleteIntent(pendingIntent)
-                .setFullScreenIntent(requestPermissionPendingIntent, true)
-                .setTimeoutAfter(60 * 1000)
-//                .setOnlyAlertOnce(true)
+//                .setDefaults(NotificationCompat.DEFAULT_SOUND)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setVisibility(NotificationCompat.VISIBILITY_PUBLIC)
-                .setSmallIcon(R.mipmap.ic_launcher_round)
-//                .setLargeIcon(largeIcon)
+                .setSmallIcon(R.drawable.progile)
+                .setLargeIcon(largeIcon)
+//                .setVibrate(pattern)
+//                .setContentIntent(pendingIntent)
+//                .setDeleteIntent(pendingIntent)
+//                .setFullScreenIntent(requestPermissionPendingIntent, true)
 //                .setStyle(new NotificationCompat.BigTextStyle().bigText("This is an example of BigTextStyle notification with action."))
                 //Add actions Dismiss and Delete to this notification.
-                .addAction(actionDismiss)
-                .addAction(actionDelete)
+//                .addAction(actionDismiss)
+//                .addAction(actionDelete)
+                .setTimeoutAfter(60 * 1000)
+                .setOnlyAlertOnce(true)
+                .setAutoCancel(false)
                 .build();
-        notification.flags = Notification.FLAG_INSISTENT;
+        notification.flags |= Notification.FLAG_INSISTENT;
 
         mNotificationManagerCompat.notify(101, notification);
     }
